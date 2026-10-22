@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCM Demo: GitHub Pages + CI/CD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Software Configuration Management Demo</h1>
+    <p>A static site deployed automatically with GitHub Actions.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Pipeline</h2>
+      <ol>
+        <li>Push code to <code>main</code></li>
+        <li>ESLint checks the JavaScript</li>
+        <li>Site is packaged into <code>dist/</code></li>
+        <li>Site is published to GitHub Pages</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Try it</h2>
+      <p id="message">Click the button to see JavaScript run.</p>
+      <button id="clickBtn" type="button">Click me</button>
+      <p>Clicks: <strong id="count">0</strong></p>
+    </section>
+
+    <section class="card">
+      <h2>Build info</h2>
+      <p id="loaded">Loading...</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for the SCM activity.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

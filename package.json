@@ -1,0 +1,14 @@
+{
+  "name": "scm-pages-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site deployed to GitHub Pages with an ESLint quality gate",
+  "scripts": {
+    "lint": "eslint script.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0"
+  }
+}
