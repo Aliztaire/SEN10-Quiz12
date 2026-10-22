@@ -6,7 +6,7 @@ const loadedEl = document.getElementById("loaded");
 let count = 0;
 
 button.addEventListener("click", () => {
-  count += 1;
+  count += 1
   countEl.textContent = String(count);
   message.textContent = "JavaScript is working!";
 });
