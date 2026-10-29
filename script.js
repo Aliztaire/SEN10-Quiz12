@@ -12,3 +12,14 @@ button.addEventListener("click", () => {
 });
 
 loadedEl.textContent = "Page loaded at " + new Date().toLocaleString();
+
+// Runs once the page has loaded: greets the visitor and shows today's SCM tip.
+function showWelcome() {
+  const now = new Date();
+  document.getElementById("greeting").textContent =
+    getTimeGreeting(now.getHours()) + ", visitor!";
+  document.getElementById("tip").textContent =
+    "SCM tip of the day: " + getDailyTip(now);
+}
+
+document.addEventListener("DOMContentLoaded", showWelcome);

@@ -13,11 +13,17 @@
   </header>
 
   <main>
+    <section class="card welcome">
+      <h2 id="greeting">Hello!</h2>
+      <p id="tip">Loading today's SCM tip...</p>
+    </section>
+
     <section class="card">
       <h2>Pipeline</h2>
       <ol>
         <li>Push code to <code>main</code></li>
         <li>ESLint checks the JavaScript</li>
+        <li>Jest runs the unit tests</li>
         <li>Site is packaged into <code>dist/</code></li>
         <li>Site is published to GitHub Pages</li>
       </ol>
@@ -40,6 +46,7 @@
     <p>Made for the SCM activity.</p>
   </footer>
 
+  <script src="greeting.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

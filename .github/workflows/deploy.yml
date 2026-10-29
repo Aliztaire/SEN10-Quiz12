@@ -1,4 +1,4 @@
-name: Lint, Package, and Deploy
+name: Lint, Test, Package, and Deploy
 
 on:
   push:
@@ -34,9 +34,28 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
+  test:
+    name: Jest unit tests
+    needs: lint # tests only run if lint passes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Jest
+        run: npm test
+
   deploy:
     name: Package and deploy
-    needs: lint # deploy only runs if lint passes
+    needs: [lint, test] # deploy only runs if BOTH lint and test pass
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -48,7 +67,7 @@ jobs:
       - name: Package site into dist/
         run: |
           mkdir dist
-          cp index.html style.css script.js dist/
+          cp index.html style.css greeting.js script.js dist/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
