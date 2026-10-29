@@ -18,7 +18,7 @@ function getTimeGreeting(hour) {
   if (hour < 5) {
     return "Up late";
   }
-  if (hour <= 12) {
+  if (hour < 12) {
     return "Good morning";
   }
   if (hour < 18) {
